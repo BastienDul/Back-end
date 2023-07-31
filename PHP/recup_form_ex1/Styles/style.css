@@ -1,0 +1,71 @@
+body /* couleur background du body */
+{
+    background-color: #808080;
+}
+
+#logo /* placement du logo de l'afpa */{
+    background-color: white;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+form /* placement du form au mileu de la page  */{
+    background-color: white;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+#border /* création d'une section pour mettre le border vert */{
+    padding-bottom: 20px;
+    border: 1px solid #16a085;
+    border-radius: 15px;
+    background-color: #f4f7f8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.form_left input, .form_left select, .form_left textarea /* mise en forme des élément du form_left */ {
+    margin: 10px;
+    width: 100%;
+    resize: none;
+    background-color: #e8eeef;
+    border: none;
+    padding: 5px;
+}
+
+.form_left input:focus, .form_left select:focus, .form_left textarea:focus
+{
+    outline: 1px solid #16a085 ;
+}
+
+.form_right select, .form_right textarea /* mise en forme des élément du form_right */ {
+    margin: 10px;
+    width: 100%;
+}
+
+hr{
+    color: #99ca81;
+    width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+button{
+    border: none;
+    width: 100%;
+    padding: 20px;
+    background-color: #1abc9c;
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+
