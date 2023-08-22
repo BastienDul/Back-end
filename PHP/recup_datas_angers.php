@@ -1,19 +1,17 @@
 <?php
 
-$arret=readline("Donnez moi le nom d'un arrêt");
-foreach ($csvFiles as $csvFile) {
-    if (($handle = fopen("irigo_gtfs_lines.csv", 'r')) !== false) {
-        while (($data = fgetcsv($handle, 1000000, ';')) !== false) {
-            if ($arret = $data[3] && $data[3] == "Tram") {
-                print"C'est un tram";
-            } else ($arret = $data[3] && $data[3] == "Bus" ){
-                print"C'est un bus"
+$nomArret=readline("Donnez moi le nom d'un arrêt : ");
+    if (($handle = fopen("bus-tram-circulation-passages.csv", 'r')) !== false) {
+        while (($data = fgetcsv($handle, 1000, ';')) !== false) {
+            if($nomArret == $data[14]) {
+                print($data[9]);
+                print($data[10]);
+                print($data[11]);
             }
         }
         fclose($handle);
     } else {
-        echo "Impossible d'ouvrir le fichier $csvFile";
+        echo "Impossible d'ouvrir le fichier $handle";
     }
-}
 ?>
  
