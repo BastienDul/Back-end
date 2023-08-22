@@ -18,7 +18,7 @@
                 if (($handle = fopen("occupation-parkings-temps-reel.csv", "r")) !== FALSE) {
                     while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
                         if ($_POST["parking"] == $data[0] && $data[4]==="Ouvert") {
-                            print true;
+                            print $data[6];
 
                         } else {
                                 print false;
