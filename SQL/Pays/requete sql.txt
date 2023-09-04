@@ -22,7 +22,7 @@ Le nombre de régions pour le continent « Amérique Septentrionale »
 
 SELECT COUNT(libelle_region) FROM t_regions WHERE continent_id=3; 
 
-La population totale par continent
+La population totale par continent EXERCICE 4
 
 SELECT libelle_continent,SUM(population_pays) FROM t_pays LEFT JOIN t_continents ON (t_continents.id_continent=t_pays.continent_id) GROUP BY libelle_continent; 
 
@@ -67,6 +67,26 @@ SELECT libelle_pays AS 'Nom Pays', `nombre_enfants_par_femme_pays` AS "Nombre d'
 - Le pays du monde où la population de plus de 65 ans est la plus forte
 
 SELECT libelle_pays AS "Nom de pays", population_plus_65_pays AS "Population >65 ans" FROM t_pays WHERE population_plus_65_pays=(SELECT MAX(population_plus_65_pays) FROM t_pays); 
+
+La moyenne de l’espérance de vie pour tous les pays du monde
+
+SELECT AVG(esperance_vie_pays) AS "esperance de vie" FROM t_pays; 
+
+La moyenne du taux de natalité par région du monde
+
+SELECT libelle_region AS "Nom Régions", AVG(taux_natalite_pays) AS "Taux de natalité" FROM t_regions LEFT JOIN t_pays ON t_regions.id_region=t_pays.region_id GROUP BY libelle_region ORDER BY AVG(taux_natalite_pays) DESC; 
+
+La moyenne du taux de natalité par continent
+
+SELECT libelle_continent AS "Nom continent", AVG(taux_natalite_pays) FROM t_continents LEFT JOIN t_pays ON t_continents.id_continent=t_pays.region_id GROUP BY libelle_continent ORDER BY AVG(taux_natalite_pays) DESC; 
+
+La moyenne du taux de mortalité par région du monde
+
+SELECT libelle_region AS "Nom régions", AVG(taux_mortalite_pays) AS "Taux de mortalité" FROM t_regions LEFT JOIN t_pays ON t_regions.id_region=t_pays.region_id GROUP BY libelle_region ORDER BY AVG(taux_mortalite_pays) DESC; 
+
+La moyenne du taux mortalité par continent
+
+SELECT libelle_continent AS "Nom continent", AVG(taux_mortalite_pays) AS 'Taux de mortalité' FROM t_continents LEFT JOIN t_pays ON t_continents.id_continent=t_pays.continent_id GROUP BY libelle_continent ORDER BY AVG(taux_mortalite_pays) DESC; 
 
 
 
