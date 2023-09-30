@@ -106,26 +106,28 @@ echo("<hr>");
 
 $nombre1Bis = 20;
 $nombre2Bis = 10;
-$operation = "addition";
+$operation = 'addition';
 
 
-switch ($opération) {
+
+
+switch ($operation) {
     case 'addition':
         $resultat = $nombre1Bis + $nombre2Bis;
         echo($resultat);
         break;
 
-    case $operation = 'soustraction':
+    case 'soustraction':
         $resultat = $nombre1Bis - $nombre2Bis;
         echo($resultat);
         break;
 
-    case $operation = 'division':
+    case 'division':
         $resultat = $nombre1Bis / $nombre2Bis;
         echo($resultat);
         break;
 
-    case $operation = 'multiplication':
+    case 'multiplication':
         $resultat = $nombre1Bis * $nombre2Bis;
         echo($resultat);
         break;
@@ -134,5 +136,7 @@ switch ($opération) {
         echo("ca ne marche pas");
         break;
 }
+
+echo("<hr>");
 
 ?>
